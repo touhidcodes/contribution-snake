@@ -2,8 +2,8 @@ name: Generate Snake Animation
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # runs daily at midnight
-  workflow_dispatch:     # allows manual run
+    - cron: '0 0 * * *'  # daily at midnight
+  workflow_dispatch:     # manual run
 
 jobs:
   build:
@@ -16,6 +16,7 @@ jobs:
         uses: Platane/snk@v3.3.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          username: touhidcodes  
 
       - name: Commit and Push
         run: |
